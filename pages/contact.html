@@ -4,13 +4,82 @@
 <meta charset="UTF-8">
 <title>Contact Us - Student Tools Hub</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+/* Contact Page Specific Styling */
+.contact-card {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 16px;
+    margin: 20px 0;
+    text-align: left;
+    transition: 0.5s;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
+}
+.contact-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(34,197,94,0.5);
+}
+
+.contact-card h2 {
+    color: #22c55e;
+    margin-bottom: 15px;
+}
+
+.contact-card input,
+.contact-card textarea {
+    background: rgba(255,255,255,0.05);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 10px 0;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    outline: none;
+    box-shadow: 0 0 12px #22c55e;
+}
+
+.contact-card button {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.contact-card button:hover {
+    background: #16a34a;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #22c55e;
+}
+
+/* AdSense Placeholder */
+.ad-placeholder {
+    border: 2px dashed #22c55e;
+    background: rgba(34,197,94,0.05);
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    font-size: 14px;
+}
+</style>
 </head>
 <body>
 
 <nav>
   <div class="logo">StudentTools</div>
   <div>
-     <a href="../index.html">Home</a>
+    <a href="../index.html">Home</a>
     <a href="../blog.html">Blog</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
@@ -22,13 +91,51 @@
   <h1>Contact Us</h1>
   <p>Have a question or feedback? Fill out the form below and we’ll get back to you.</p>
 
-  <input type="text" placeholder="Your Name">
-  <input type="email" placeholder="Your Email">
-  <textarea placeholder="Your Message"></textarea>
-  <button>Send Message</button>
+  <div class="contact-card">
+    <h2>Send Us a Message</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message" rows="6"></textarea>
+    <button>Send Message</button>
+  </div>
+
+ 
 </div>
 
-<footer>© 2026 Student Tools Hub</footer>
+<!-- PROFESSIONAL FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Student Tools Hub</h3>
+      <p> A free online collection of essential academic tools designed 
+        to help students perform calculations and productivity tasks easily.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="../index.html">Home</a>
+      <a href="../blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Popular Tools</h3>
+      <a href="../tools/cgpa.html">CGPA Calculator</a>
+      <a href="../tools/percentage.html">Percentage Calculator</a>
+      <a href="../tools/age.html">Age Calculator</a>
+      <a href="../tools/word.html">Word Counter</a>
+      <a href="../tools/password.html">Password Generator</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Student Tools Hub — All Rights Reserved
+  </div>
+</footer>
 
 </body>
 </html>
