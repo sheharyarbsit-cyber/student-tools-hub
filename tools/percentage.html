@@ -2,14 +2,83 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Percentage Calculator</title>
+<title>Percentage Calculator - Student Tools Hub</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+/* Percentage Calculator Card */
+.calc-card {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 16px;
+    margin: 20px 0;
+    text-align: center;
+    transition: 0.5s;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
+}
+.calc-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(34,197,94,0.5);
+}
+.calc-card h1 {
+    color: #22c55e;
+    margin-bottom: 20px;
+}
+.calc-card input {
+    background: rgba(255,255,255,0.05);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 10px 0;
+    width: 60%;
+    max-width: 250px;
+    transition: 0.3s;
+}
+.calc-card input:focus {
+    outline: none;
+    box-shadow: 0 0 12px #22c55e;
+}
+.calc-card button {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 10px;
+}
+.calc-card button:hover {
+    background: #16a34a;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #22c55e;
+}
+.calc-card h2 {
+    color: #e2e8f0;
+    margin-top: 20px;
+}
+
+/* AdSense Placeholder */
+.ad-placeholder {
+    border: 2px dashed #22c55e;
+    background: rgba(34,197,94,0.05);
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    font-size: 14px;
+}
+</style>
 </head>
 <body>
+
 <nav>
   <div class="logo">StudentTools</div>
   <div>
-     <a href="../index.html">Home</a>
+    <a href="../index.html">Home</a>
     <a href="../blog.html">Blog</a>
     <a href="../pages/about.html">About</a>
     <a href="../pages/contact.html">Contact</a>
@@ -18,20 +87,67 @@
 </nav>
 
 <div class="container">
-  <h1>Percentage Calculator</h1>
-  <input id="marks" placeholder="Obtained Marks">
-  <input id="total" placeholder="Total Marks">
-  <button onclick="calc()">Calculate Percentage</button>
-  <h2 id="res"></h2>
+  <div class="calc-card">
+    <h1>Percentage Calculator</h1>
+    <input id="marks" placeholder="Obtained Marks" type="number" min="0">
+    <input id="total" placeholder="Total Marks" type="number" min="1">
+    <br>
+    <button onclick="calc()">Calculate Percentage</button>
+    <h2 id="res"></h2>
+  </div>
+
+
+  <div class="calc-card">
+    <h2>How It Works</h2>
+    <p>
+      Enter your obtained marks and total marks, then click "Calculate Percentage".  
+      The calculator will instantly show your score as a percentage.  
+      Useful for students to quickly check results, grades, and assignments.
+    </p>
+  </div>
 </div>
 
 <script>
 function calc(){
-  let m=parseFloat(document.getElementById("marks").value)||0;
-  let t=parseFloat(document.getElementById("total").value)||0;
-  document.getElementById("res").innerText="Percentage: "+((m/t)*100).toFixed(2)+"%";
+  let m = parseFloat(document.getElementById("marks").value) || 0;
+  let t = parseFloat(document.getElementById("total").value) || 1;
+  let perc = ((m/t)*100).toFixed(2);
+  document.getElementById("res").innerText = "Percentage: " + perc + "%";
 }
 </script>
-<footer>© 2026 Student Tools Hub</footer>
+
+<!-- PROFESSIONAL FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Student Tools Hub</h3>
+      <p>A free online collection of essential academic tools designed 
+        to help students perform calculations and productivity tasks easily.</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="../index.html">Home</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../pages/about.html">About</a>
+      <a href="../pages/contact.html">Contact</a>
+      <a href="../pages/privacy.html">Privacy Policy</a>
+      <a href="../pages/disclaimer.html">Disclaimer</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Popular Tools</h3>
+      <a href="cgpa.html">CGPA Calculator</a>
+      <a href="age.html">Age Calculator</a>
+      <a href="word.html">Word Counter</a>
+      <a href="password.html">Password Generator</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Student Tools Hub — All Rights Reserved
+  </div>
+</footer>
+
 </body>
 </html>
